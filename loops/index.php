@@ -1,114 +1,99 @@
 <?php
+// Start output buffering
+ob_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>PHP Loop Act - Secolles</title>
+</head>
+<body>
+
+<h1>PHP Loop Act - Secolles</h1>
+
+<?php
 // Activity 1: Number Counter
-echo "Activity 1: Number Counter\n";
-
-// Part 1: Print numbers from 1 to 10 using a while loop
-$i = 1;
-while ($i <= 10) {
+echo "<div class='activity'><h2>Activity 1: Number Counter</h2>";
+$i = 2;
+while ($i <= 20) {
     echo $i . " ";
-    $i++;
+    $i += 2;
 }
-
-echo "\n\n";
-
-// Part 2: Print even numbers between 1 and 20
-$j = 2;
-while ($j <= 20) {
-    echo $j . " ";
-    $j += 2;
-}
-
-echo "\n\n";
+echo "</div>"; // Close activity div
 
 // Activity 2: Password Validator
-echo "Activity 2: Password Validator\n";
-
+echo "<div class='activity'><h2>Activity 2: Password Validator</h2>";
+$password = "wrong"; // Initialize with a wrong password
 do {
-    $input = readline("Please enter the password: ");
-    if ($input !== "password123") {
-        echo "Incorrect password.\n";
+    $password = "password123"; // Simulate user input
+    if ($password !== "password123") {
+        echo "Incorrect password.<br>";
     }
-} while ($input !== "password123");
-
-echo "Access Granted.\n\n";
+} while ($password !== "password123");
+echo "Access Granted.</div>";
 
 // Activity 3: Multiplication Table
-echo "Activity 3: Multiplication Table\n";
-
+echo "<div class='activity'><h2>Activity 3: Multiplication Table</h2>";
 for ($i = 1; $i <= 10; $i++) {
-    echo "7 x $i = " . (7 * $i) . "\n";
+    echo "7 x $i = " . (7 * $i) . "<br>";
 }
-
-echo "\n";
+echo "</div>";
 
 // Activity 4: Loop Control with break and continue
-echo "Activity 4: Loop Control with break and continue\n";
-
+echo "<div class='activity'><h2>Activity 4: Loop Control with break and continue</h2>";
 for ($i = 1; $i <= 10; $i++) {
-    if ($i == 5) {
-        continue;
-    }
-    if ($i == 8) {
-        break;
-    }
+    if ($i == 5) continue;
+    if ($i == 8) break;
     echo $i . " ";
 }
-
-echo "\n\n";
+echo "</div>";
 
 // Activity 5: Sum of Numbers
-echo "Activity 5: Sum of Numbers\n";
-
+echo "<div class='activity'><h2>Activity 5: Sum of Numbers</h2>";
 $sum = 0;
 $i = 1;
 while ($i <= 100) {
     $sum += $i;
     $i++;
 }
-echo "The sum of numbers from 1 to 100 is: $sum\n\n";
+echo "The sum of numbers from 1 to 100 is: $sum</div>";
 
 // Activity 6: Array Iteration with foreach
-echo "Activity 6: Array Iteration with foreach\n";
-
+echo "<div class='activity'><h2>Activity 6: Array Iteration with foreach</h2>";
 $movies = ["The Shawshank Redemption", "Inception", "The Dark Knight", "Interstellar", "Parasite"];
-
 foreach ($movies as $index => $movie) {
-    echo ($index + 1) . ". " . $movie . "\n";
+    echo ($index + 1) . ". $movie<br>";
 }
-
-echo "\n";
+echo "</div>";
 
 // Activity 7: Key-Value Pairs with foreach
-echo "Activity 7: Key-Value Pairs with foreach\n";
-
+echo "<div class='activity'><h2>Activity 7: Key-Value Pairs with foreach</h2>";
 $student = [
     "Name" => "Alice",
     "Age" => 20,
     "Grade" => "A",
     "City" => "Baguio"
 ];
-
 foreach ($student as $key => $value) {
-    echo "$key: $value\n";
+    echo "$key: $value<br>";
 }
-
-echo "\n";
+echo "</div>";
 
 // Activity 8: Factorial Calculator
-echo "Activity 8: Factorial Calculator\n";
-
+echo "<div class='activity'><h2>Activity 8: Factorial Calculator</h2>";
 $number = 5;
 $factorial = 1;
-
 for ($i = $number; $i > 0; $i--) {
     $factorial *= $i;
 }
-
-echo "Factorial of $number is: $factorial\n\n";
+echo "Factorial of $number is: $factorial</div>";
 
 // Activity 9: FizzBuzz Challenge
-echo "Activity 9: FizzBuzz Challenge\n";
-
+echo "<div class='activity'><h2>Activity 9: FizzBuzz Challenge</h2>";
 for ($i = 1; $i <= 50; $i++) {
     if ($i % 3 == 0 && $i % 5 == 0) {
         echo "FizzBuzz ";
@@ -120,62 +105,53 @@ for ($i = 1; $i <= 50; $i++) {
         echo $i . " ";
     }
 }
-
-echo "\n\n";
+echo "</div>";
 
 // Activity 10: Prime Number Checker
-echo "Activity 10: Prime Number Checker\n";
-
-$number = readline("Enter a number: ");
+echo "<div class='activity'><h2>Activity 10: Prime Number Checker</h2>";
+$number = 17; // You can change this number for testing
 $isPrime = true;
-
-if ($number < 2) {
-    $isPrime = false;
-} else {
-    for ($i = 2; $i <= sqrt($number); $i++) {
-        if ($number % $i == 0) {
-            $isPrime = false;
-            break;
-        }
+for ($i = 2; $i <= sqrt($number); $i++) {
+    if ($number % $i == 0) {
+        $isPrime = false;
+        break;
     }
 }
-
-if ($isPrime) {
-    echo "$number is a prime number.\n";
+if ($isPrime && $number > 1) {
+    echo "$number is a prime number.</div>";
 } else {
-    echo "$number is not a prime number.\n";
+    echo "$number is not a prime number.</div>";
 }
-
-echo "\n";
 
 // Activity 11: Fibonacci Sequence
-echo "Activity 11: Fibonacci Sequence\n";
-
-$a = 0;
-$b = 1;
+echo "<div class='activity'><h2>Activity 11: Fibonacci Sequence</h2>";
+$fib1 = 0;
+$fib2 = 1;
 $count = 0;
-
-while ($count < 10) {
-    echo $a . " ";
-    $next = $a + $b;
-    $a = $b;
-    $b = $next;
+echo "$fib1 $fib2 ";
+while ($count < 8) {
+    $next = $fib1 + $fib2;
+    echo "$next ";
+    $fib1 = $fib2;
+    $fib2 = $next;
     $count++;
 }
-
-echo "\n\n";
+echo "</div>";
 
 // Activity 12: Reverse a String
-echo "Activity 12: Reverse a String\n";
-
-$string = "Hello";
+echo "<div class='activity'><h2>Activity 12: Reverse a String</h2>";
+$input = "Hello"; // You can change this input
 $reversed = "";
-
-for ($i = strlen($string) - 1; $i >= 0; $i--) {
-    $reversed .= $string[$i];
+for ($i = strlen($input) - 1; $i >= 0; $i--) {
+    $reversed .= $input[$i];
 }
-
-echo "Input: \"$string\"\n";
-echo "Output: \"$reversed\"\n";
+echo "Input: \"$input\"<br>Output: \"$reversed\"</div>";
 ?>
-;
+
+</body>
+</html>
+
+<?php
+// End output buffering and flush the output
+ob_end_flush();
+?>
